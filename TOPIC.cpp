@@ -53,9 +53,9 @@ void Server::topicCmd(std::string locate, int socket)
         else
         {
             if (found->getTopic() == "")
-                replyClient(TOPIC(_clients[socket]->getNickName(), channelName, "No Topic"), socket);
+                replyClient(TOPIC(_clients[socket]->getNickName(),_clients[socket]->getUserName(), channelName, "No Topic"), socket);
             else
-                replyClient(TOPIC(_clients[socket]->getNickName(), channelName, found->getTopic()), socket);
+                replyClient(TOPIC(_clients[socket]->getNickName(), _clients[socket]->getUserName(), channelName, found->getTopic()), socket);
         }
         return ;
     }

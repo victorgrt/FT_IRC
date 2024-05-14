@@ -59,7 +59,7 @@ void Server::send_in_channel(std::string user, std::string s_nick, std::string m
             {
                 for (std::map<int, Client*>::iterator it_clt = client_list.begin(); it_clt != client_list.end(); ++it_clt)
                 {
-                    std::string msg = TOPIC(it_clt->second->getNickName(), user, msg_to_send);
+                    std::string msg = TOPIC(it_clt->second->getNickName(), it_clt->second->getUserName() ,user, msg_to_send);
                     replyClient(msg, it_clt->first);
                 }
             }

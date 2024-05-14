@@ -20,7 +20,7 @@
 // NICK ERRORS //
 #define NICKNAMEINUSE_ERR(username) (":localhost 433 * " + username + " :Nickname is already in use." + "\r\n")
 #define ERR_ERRONEUSNICKNAME(client_username, nick) (client_username + " " + nick + " :Erroneus nickname" + "\r\n") //THERE IS A FORDBIDEN CHAR IN THE NICKNAME
-#define TOPIC(nickname, channelName, topic) (":" + nickname + "!" + "uaupetit@localhost" + " TOPIC #" + channelName + " :" + topic + "\r\n") 
+#define TOPIC(nickname, username, channelName, topic) (":" + nickname + "!" + username + "@localhost" + " TOPIC #" + channelName + " :" + topic + "\r\n") 
 #define KICKUSER(channel_name, nickname, reason) ("KICK " + channel_name + " " + nickname + " :" + reason + "\r\n")
 #define KICK(userid, channel_name, kicked_nickname, reason) (userid + " KICK #" + channel_name + " " + kicked_nickname + " :" + reason + "\r\n")
 // PRIVMSG ERRORS

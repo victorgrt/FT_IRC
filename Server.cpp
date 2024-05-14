@@ -16,7 +16,7 @@ Server::Server(char **av)
 		int port = atoi(av[1]);
 		_socket = socket(AF_INET, SOCK_STREAM, 0);
 		_serverAddress.sin_family = AF_INET;
-		_serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1");
+		_serverAddress.sin_addr.s_addr = INADDR_ANY;
 		_serverAddress.sin_port = htons(port);
 		if (bind(_socket, (struct sockaddr*)&_serverAddress, sizeof(_serverAddress)) == -1)
 		{
